@@ -406,14 +406,71 @@ def choose():
 
 
 def choose_ex():
-    list = [1, 53, 35, 67, 12]
+    list = [1, 54, 35, 67, 12]
+    print(list)
+    e = 0     # itt kikommentelhetem az e-t úgyis működik????
     for e in list:
         if e % 2 == 0:
-            print(e)
+            print('Az elso paros szam:', e)
             break
     else:
         print('None')
-    print(list.index(e)+1)
+    print('Az elso paros szam sorszama:', list.index(e)+1)
+    for hettel_oszt in list:
+        if hettel_oszt % 7 == 0:
+            print('Az elso hettel oszthato szam:', hettel_oszt)
+            break
+    else:
+        print('None')
+    for h in list:
+        if h-60>0 and h-70<0:
+            print('Az elso 60 es 70 koze eso szam:', h)
+            break
+    else:
+        print('None')
+    for t in list:
+        if t == 12:
+            print('A 12-es szam, ', list.index(t)+1, '. a listaban!', sep='')
+
+
+def choose_ex2():
+    list = ['Elza', 'Melinda', 'Ferenc', 'Barbara', 'Vilma', 'Miklós', 'Ambrus', 'Mária', 'Natália', 'Judit', 'Árpád',
+            'Gabriella', 'Luca', 'Szilárda', 'Valér', 'Aletta', 'Lázár', 'Auguszta', 'Viola', 'Teofil', 'Tamás',
+            'Zénó', 'Viktória', 'Ádám', 'Eugénia', 'István', 'János', 'Kamilla', 'Tamara', 'Dávid', 'Szilveszter']
+    Teofil = 0
+    for Teofil in list:
+        if Teofil == 'Teofil':
+            print('Teofil nevnapjanak datuma: december', list.index(Teofil)+1)
+
+
+def euklides_algoritm():
+    print('Ket szam legnagyobb kozos osztojat fogjuk kiszamolni! ')
+    a = int(input('Adja meg az elso szamot! '))
+    b = int(input('Adja meg a masodik szamot! '))
+    egyenlo = False
+    while not egyenlo:
+        if a == b:
+            egyenlo = True
+            print('Ennek a ket szamnak a legnagyobb kozos osztoja:', a)
+        else:
+            if a > b:
+                a= a-b
+            else:
+                b = b-a
+
+
+def lkkt():
+    print('Ket szam legkisebb kozos tobbszoroset fogjuk kiszamolni! ')
+    szam = int(input('Adja meg az elso szamot! '))
+    szam2 = int(input('Adja meg a masodik szamot! '))
+    if szam > szam2:
+        nagyobb = szam
+    else:
+        nagyobb = szam2
+    for i in range(nagyobb, szam*szam2+1):
+        if i % szam == 0 and i % szam2 == 0:
+            print(i, 'a legkisebb kozos tobbszoros!')
+            break
 
 
 
@@ -430,7 +487,7 @@ def choose_ex():
 
 
 def main():
-    choose_ex()
+    lkkt()
 
 
 
