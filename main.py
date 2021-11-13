@@ -290,7 +290,7 @@ def drawing_5():
 
 
 def list_func():
-    autoim = ['Dacia', 'Jeep', 'Opel', 'Lotus', 'Volvo', \
+    autoim = ['Dacia', 'Jeep', 'Opel', 'Lotus', 'Volvo',
               'Fiat', 'Aston Martin', 'Mazda', 'Saab', 'Toyota', 'Audi']
 
     uj_autoim = []
@@ -392,7 +392,7 @@ def decision2():
 
 
 def choose():
-    my_cars = ['Dacia', 'Jeep', 'Opel', 'Lotus', 'Volvo', \
+    my_cars = ['Dacia', 'Jeep', 'Opel', 'Lotus', 'Volvo',
               'Fiat', 'Aston Martin', 'Mazda', 'Saab', 'Toyota', 'Audi']
     who = input('What kind of car do you search?' )
     for i in range(len(my_cars)):
