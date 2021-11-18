@@ -473,11 +473,47 @@ def lkkt():
             break
 
 
+def lin_search():
+    list = [5, 4, 3, 4, 5, 4, 4, 5, 3, 1]  # Van-e olyan szam a listaban, ami egymas utan ismetlodik?
+    for i in range(len(list)):
+        if list[i] == list[i-1]:
+            print(list[i])
+            break
+    else:
+        print('Nem volt ilyen a listaban! ')
+
+    list2 = ['Sanyi', 'Manyi', 'Jani', 'Pali', 'Olga', 'Pali', 'Pista'] # Van-e ket megegyezo nev a listaban?
+    i = 0
+    vege = False
+    while i < len(list2) and not vege:
+        j = 0
+        i += 1
+        while j < len(list2) and not vege:
+            if list2[i] == list2[j] and i != j:
+                vege = True
+            else:
+                j += 1
+    if vege:
+        print(list2[i])
+
+    list3 = [3, 6, 4, 9, 8, 11, 12, 20] # Van-e két olyan szam a listaban, amik csak 1-el ternek el egymastol?
+    for i in range(len(list3)):
+        if abs(list3[i] - list3[i+1]) == 1:
+            print('Ezek a szamok: ', list3[i], 'és', list3[i+1])
+            break
+    else:
+        print('Sajnos nincsenek ilyen szamok! ')
 
 
-
-
-
+def count():
+    list = []
+    count = 0
+    for i in range(0, 100):
+        if i<30 or i>60:
+            list.append(i)
+            count += 1
+    print(list)
+    print(count)
 
 
 
@@ -487,7 +523,7 @@ def lkkt():
 
 
 def main():
-    lkkt()
+    count()
 
 
 
