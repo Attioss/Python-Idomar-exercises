@@ -516,12 +516,6 @@ def count():
     print(count)
 
 
-
-
-
-
-
-
 def main():
     count()
 
