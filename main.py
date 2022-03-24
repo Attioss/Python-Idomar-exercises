@@ -516,9 +516,215 @@ def count():
     print(count)
 
 
-def main():
-    count()
+def list_training():
+    numbers = [1, 100, 300, 156, 21, 212, 45, 34, 78, 107]
+    under100 = []
+    over100 = []
+    for i in numbers:
+        if i < 100:
+            under100.append(i)
+        else:
+            over100.append(i)
+    print(under100)
+    print(over100)
+    print(numbers[-2:-4:-1])   # [from:until:steps]
+    print(sorted(numbers))
+    zero_list = []
+    for i in range(100):
+        zero_list.append(0)
+    print(zero_list)
 
+
+
+
+#hackerrank challenges
+def format():
+    list = [-4, 3, -9, 0, 4, 1]
+    size_list = 6
+    n = 0
+    z = 0
+    p = 0
+    for i in list:
+        if i > 0:
+            p += 1
+        elif i < 0:
+            n += 1
+        elif i == 0:
+            z += 1
+    print("{:.6f}".format(p / size_list))
+    print("{:.6f}".format(n / size_list))
+    print("{:.6f}".format(z / size_list))
+
+
+def timeconversion():
+    s = "07:05:45AM"
+    #s2 = "11:00:00AM"
+    #s3 = "07:05:45PM"
+    #s4 = "11:05:45PM"
+    if s[-2:] == "AM" and s[:2] == "12":
+        return "00" + s[2:-2]
+    elif s[-2:] == "AM":
+        return s[:-2]
+    elif s[-2:] == "PM" and s[:2] == "12":
+        return s[:-2]
+    else:
+        return str(int(s[:2]) + 12) + s[2:-2]
+
+
+def fizzbuzz():
+
+    n = 15
+    for i in range(n+1):
+        if i == 0:
+            continue
+        elif i % 5 == 0 and i % 3 == 0:
+            print("Fizzbuzz")
+        elif i % 3 == 0:
+            print("Fizz")
+        elif i % 5 == 0:
+            print("Buzz")
+        else:
+            print(i)
+
+
+def median():
+
+    arr = [5, 4, 3, 2, 1]
+    d = int((int(len(arr))-1)/2) #after sort
+    import statistics
+    print(statistics.median(arr))
+    print(arr[d])
+
+
+def lonely_integer():
+
+    a = [3, 2, 3, 2, 1, 1, 9, 5, 7, 7, 5, 5, 5]
+    result = 0
+    for num in a:
+        result ^= num
+    print(result)
+
+
+def diagonalDifference():
+    arr = [[11, 2, 4], [4, 5, 6], [10, 8, -12]]
+    temp = 0
+    emp = 0
+    for i in range(0, len(arr)):
+        temp = temp + arr[i][i]
+
+    for j in range(0, len(arr)):
+        emp = emp + arr[j][len(arr) - 1 - j]
+
+    print(abs(temp - emp))
+
+
+def test():
+    A = [-3, 2, 3, 5, 1]
+    #A = [1, 2, 3]
+    #A = [-3, -5]
+    b = sorted(A)
+    # 1 1 2 3 4 6
+    templist = []
+    if max(b) < 0:
+        print("1")
+    else:
+        for i in range(max(b)+1):
+            templist.append(i)
+        print(templist)
+        result = [item for item in templist if item not in b and item > 0]
+        if result:
+            print(result[0])
+        else:
+            print(max(b)+1)
+
+
+def permutations():
+    x = 2
+    y = 2
+    z = 2
+    n = 2
+    list = []
+    for i in range(x+1):
+        for j in range(y+1):
+            for k in range(z+1):
+                if i + j + k != n:
+                    list.append([i, j, k])
+    print(list)
+
+
+def runner_up():
+    n = 5
+    arr = [2, 3, 6, 6, 5]
+    templist = []
+    for i in arr:
+        if i < max(arr):
+            templist.append(i)
+    print(max(templist))
+
+
+def ericsson():
+    S = "Sat"
+    K = 23
+    days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    act_index = days.index(str(S))
+    print(days[(act_index+K) % 7])
+
+
+def ericsson2():
+    A = [51, 71, 17, 42]
+    #A = [42, 33, 60]
+    #A = [51, 32, 43]
+    sums = []
+    #serials = []
+    results = []
+    for i in A:
+        sum_of_digits = 0
+        for digit in str(i):
+            sum_of_digits += int(digit)
+        sums.append(sum_of_digits)
+    #print(sums)
+    for j in range(len(sums)):
+        for k in range(len(sums)):
+            #print(sums[j], sums[k])
+            if sums[j] == sums[k]:
+                for l in A:
+                    if j != k:
+                        res = A[j] + A[k]
+                        results.append(res)
+                        #print(results)
+    if results:
+        max_result = max(results)
+        print(max_result)
+    else:
+        print("-1")
+
+
+def second_line():
+    arr = (list(map(int, input().split())))
+    #it gives second line of the input if i correct it
+
+
+def duplicates():
+    pass
+    # logic for cycle and append IF NOT IN LIST
+    # or for cycle and append them to a set
+
+
+def dict_train():
+    my_dict = {'name': 'Bronx', 'age': '2', 'occupation': "Corey's Dog"}
+    for key,val in my_dict.items():
+        print("My {} is {}".format(key, val))
+
+
+def Fibonacci_Generator(num):
+    a, b = 0, 1
+    for i in range(0, num):
+        yield "{}: {}".format(i+1, a)
+        a, b = b, a + b
+
+
+def main():
+    dict_train()
 
 
 if __name__ == "__main__":
