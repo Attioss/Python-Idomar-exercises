@@ -540,7 +540,9 @@ def list_training():
 #hackerrank challenges
 def format():
     list = [-4, 3, -9, 0, 4, 1]
-    size_list = 6
+    size_list = 0
+    for i in range(len(list)):
+        size_list += 1
     n = 0
     z = 0
     p = 0
@@ -554,6 +556,7 @@ def format():
     print("{:.6f}".format(p / size_list))
     print("{:.6f}".format(n / size_list))
     print("{:.6f}".format(z / size_list))
+    print(size_list)
 
 
 def timeconversion():
@@ -724,7 +727,7 @@ def Fibonacci_Generator(num):
 
 
 def main():
-    dict_train()
+    format()
 
 
 if __name__ == "__main__":
